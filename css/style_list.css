@@ -1,0 +1,219 @@
+#wrapper_tunein {
+	width:20px;
+}
+
+#left_column, #right_column
+#left_bottom, #right_bottom {
+	width:100px;
+	border:solid 1px #000;
+}
+
+#left_column, left_bottom {
+	float:left;
+}
+
+#right_column, #right_bottom {
+	float:right;
+}
+
+
+.full {
+width : 215px;
+text-align : center;
+margin-left : auto;
+margin-right : auto;
+padding : 0px;
+height : 300px;
+
+}
+
+.buffer-left {
+width: 95px;
+border-width : 1px;
+border-color : White;
+border-style : solid;
+height : 1px;
+float : left;
+}
+
+.buffer-right {
+width: 95px;
+border-width : 1px;
+border-color : White;
+border-style : solid;
+height : 1px;
+float : right;
+}
+
+.a1 {
+width: 95px;
+border-width : 1px;
+border-color : White;
+border-style : solid;
+float : left;
+height : 110px;
+}
+
+.a2 {
+width: 95px;
+border-width : 1px;
+border-color : White;
+border-style : solid;
+height : 110px;
+float : right;
+}
+
+.a3 {
+width: 95px;
+border-width : 1px;
+border-color : White;
+border-style : solid;
+height : 110px;
+float : left;
+}
+
+tr .label {
+padding-right:3px;
+  text-align:right;
+  vertical-align:top;
+}
+
+/** Staff Profile **/
+
+#staff-wrapper-full {
+  padding-top: 10px;
+}
+
+.wrapper {
+  height:auto;
+  width:100%;
+}
+
+.wrapper-right {
+  height:auto;
+  width:49.5%;
+  float:right;
+}
+
+.wrapper-left {
+  height:auto;
+  width:49.5%;
+  float:left;
+}
+
+.staff-image {
+  float: left;
+  padding: 10px;
+}
+
+.profile-wrapper {
+  background-color:#B0B0B0;
+  height:auto;
+  padding-top:10px;
+  padding-bottom:5px;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+.profile-wrapper p {
+  color: #000000;
+}
+.staff-name{
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size:20px;
+  text-align:center;
+  padding-top:5px;
+}
+
+.extra-wrap {
+  background-color:#B0B0B0
+}
+
+.clear {
+  padding: 10px;
+  background-color:#FFFFFF;
+}
+
+.staff-profile {
+    float:left;
+    padding:10px;
+}
+
+.profile-link {
+  color:#000000;
+  text-align:center;
+  background-color:#B0B0B0;
+  widht:100%;
+}
+
+.profile-wrapper h1 {
+  font-size:20px;
+  color:#000000;
+  padding-left:3px;
+  text-align:center;
+}
+
+.team-heading {
+  font-size:20;
+  text-align:center;
+}
+
+#ins-quote
+{
+  color:#000000;
+  text-align:center;
+}
+
+hr {
+  color:#B0B0B0;
+}
+
+
+/** Messengers **/
+
+.style31 {
+	border: 3px solid #C0C0C0;
+}
+
+.style32 {
+	color: #000000;
+	font-size: medium;
+	background-color: #C0C0C0;
+	text-align: left;
+}
+
+.style33 {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+/* Tabs */
+
+ul.tabs {
+    width:250px;
+    margin:0;
+    padding:0;
+}
+ul.tabs li {
+    display:block;
+    float:left;
+    padding:0 5px;
+}
+ul.tabs li a {
+    display:block;
+    float:left;
+    padding:5px;
+    font-size:0.8em;
+    background-color:#e0e0e0;
+    color:#666;
+    text-decoration:none;
+}
+.selected {
+    font-weight:bold;
+}
+.tab-content {
+	clear:both;
+    border:1px solid #ddd;
+    padding:10px;
+}

@@ -1,0 +1,53 @@
+﻿body {margin:0;padding:0;border:0;background:#F8E8A0;font-family: 'Capriola', sans-serif;}
+/* Header Styles ***
+********************/
+#whiteHat {position:absolute;top:0px;width:100%;height:100px;background: #ffffff;
+background: -moz-linear-gradient(-45deg,  #ffffff 0%, #e5e5e5 100%);
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5));
+background: -webkit-linear-gradient(-45deg,  #ffffff 0%,#e5e5e5 100%);
+background: -o-linear-gradient(-45deg,  #ffffff 0%,#e5e5e5 100%);
+background: -ms-linear-gradient(-45deg,  #ffffff 0%,#e5e5e5 100%);
+background: linear-gradient(135deg,  #ffffff 0%,#e5e5e5 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 );
+border-bottom:2px solid #000000;z-index:1;}
+#whiteHat img {margin:10px;}
+#container {position:absolute;left:200px;top:160px;width:800px;}
+/* SideBar Styles ***
+********************/
+#sb {background:#FFAB2C;width:160px;position:fixed;overflow:visible;height:10000px;}
+#sbC {width:140px;float:left;margin-top:140px;text-align:right;}
+#sbC p, span, strong {color:#FFFFFF;font-size:14px;font-family:arial;}
+#sbC a {color:#FFFFFF;font-size:14px;font-family:arial;padding:2px;}
+#sbC a:link {text-decoration:none;}
+#sbC a:hover {background:#FFFFFF;color:#F87820;}
+#sbC h5 {color:#FFFFFF;font-weight:bold;border-bottom: 2px dotted #FFFFFF;font-family:arial;margin:30px 0px 0px 0px;}
+#sbC h5:first-child {margin-top:0px;}
+#sbC ul {list-style:none;padding:0px;text-align:right;margin:0px;}
+#sbC li {padding:0;margin:0;width:140px;overflow:visible;}
+/* Ribbon Styles ***
+********************/
+.ribWrap {position: relative;margin-bottom:40px;}
+.ribFro {background: #ff7b0d;
+background: -moz-linear-gradient(left,  #ff7b0d 0%, #ff9b38 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ff7b0d), color-stop(100%,#ff9b38));
+background: -webkit-linear-gradient(left,  #ff7b0d 0%,#ff9b38 100%);
+background: -o-linear-gradient(left,  #ff7b0d 0%,#ff9b38 100%);
+background: -ms-linear-gradient(left,  #ff7b0d 0%,#ff9b38 100%);
+background: linear-gradient(to right,  #ff7b0d 0%,#ff9b38 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7b0d', endColorstr='#ff9b38',GradientType=1 );
+width: 180px;position: relative;left:0px;z-index: 2;padding-bottom:10px;padding-top:10px;}
+.ribTex {margin-right:40px;}
+.ribTri {position: absolute;z-index: 1;border-style:solid;height:0px;width:0px;left: 160px;border-color: transparent transparent transparent #FFDF5A;top:-10px;border-width: 10px 0 0 20px;}
+/* Table Styles ***
+******************/
+#stripe {background:#E6710A;padding:5px;border-radius:5px;font-family:arial;font-size:12px;}
+#stripe tbody tr:first-child {content: ' '}#stripe tbody tr {background-color:#FFFFFF;}
+#stripe tbody tr:nth-child(odd) {background-color:#DDDDDD;  padding-left:5px;}
+#stripe tbody td {padding:4px;}
+#stripe thead {background-color:#E6710A;font-weight:bold;color:#FFFFFF;}
+#stripe thead td {border-style:none;padding:10px 0px;}
+#quickFind {color:#333333;font-size:14px;padding:10px 0px;}
+#quickFind input {width:80%;}
+#error, #success {color:#FFFFFF;text-align:center;border-radius:10px;font-size:30px;width:400px;right:30px;position:absolute;top:30px;}
+#error {background:#FF0000;text-decoration:blink;}
+#success {background:#80C347;}
