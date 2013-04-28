@@ -1,0 +1,44 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   .gitignore
+#	new file:   IncludeMe.php
+#	modified:   README.md
+#	new file:   TableStructure.sql
+#	new file:   admin/IncludeMe.php
+#	new file:   admin/addShow.php
+#	new file:   admin/editShow.php
+#	new file:   admin/index.php
+#	new file:   config.sample.php
+#	new file:   css/main.css
+#	new file:   css/style.css
+#	new file:   css/style_list.css
+#	new file:   dml.php
+#	new file:   favicon.ico
+#	new file:   handlers/IncludeMe.php
+#	new file:   handlers/ScheduleClass.php
+#	new file:   handlers/addShow.php
+#	new file:   handlers/editShow.php
+#	new file:   handlers/error_log
+#	new file:   handlers/removeShow.php
+#	new file:   handlers/saveShow.php
+#	new file:   images/ihcdSize.png
+#	new file:   index.php
+#	new file:   js/fancyFunction.js
+#	new file:   js/fancybox_sprite.png
+#	new file:   js/jquery.fancybox.css
+#	new file:   js/jquery.fancybox.js
+#	new file:   js/stupidtable.js
+#	new file:   js/stupidtable.min.js
+#	new file:   lightBox/editBook.php
+#	new file:   post.php
+#	new file:   schedule.raw.php
+#	new file:   staff_list.php
+#	new file:   static/navigation.static.php
+#	new file:   test.php
+#
+

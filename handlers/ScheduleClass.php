@@ -21,7 +21,9 @@
  * @version    v. 0.1
  * @since      File available since Release 0.1
  */
- include '../config.php'; //Eventually users will be able to have a config file in which there settings will be held.
+ define('__ROOT__', dirname(dirname(__FILE__)));
+require_once(__ROOT__.'/config.php'); 
+//Eventually users will be able to have a config file in which there settings will be held.
 
  class ScheduleClass {
  
@@ -30,12 +32,14 @@
 		$this->connect();
 	}
 	
+	//Database Connection Function
+	//This will be rewritten to use the improved version of the MySQL driver, MySQLi, very soon.
 	function connect()
 	{
-			$myconn = mysqli_connect(DB_Host, "DB_Username", "DB_Password");
+			$myconn = mysql_connect(DB_Host, DB_Username, DB_Password);
 			if($myconn)
 			{
-				$seldb = mysqli_select_db("DB_Name", $myconn);
+				$seldb = mysql_select_db(DB_Name, $myconn);
 				
 				if($seldb)
 				{
@@ -44,7 +48,7 @@
 				} 
 				else
 				{
-					$error = mysqli_error();
+					$error = mysql_error();
 					return HEADER ("LOCATION: index.php#tab8?error=1"); //return MySQL error to be handled in index.php  
 				}
 			} 
