@@ -21,9 +21,9 @@
  * @version    v. 0.1
  * @since      File available since Release 0.1
  */
- define('__ROOT__', dirname(dirname(__FILE__)));
+
+define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__.'/config.php'); 
-//Eventually users will be able to have a config file in which there settings will be held.
 
  class ScheduleClass {
  
@@ -61,6 +61,25 @@ require_once(__ROOT__.'/config.php');
 	}
 	
 	/** Begin Recrod Management **/
+
+	// This function will be used to populate the edit show form.
+	function getShow($ID)
+	{
+		$query = "SELECT * FROM PCR_Show_Schedule WHERE ID = 1";
+		$result = mysql_query($query);
+		if($result == false) { 
+			echo "Query Failed for reason '" . mysql_error() . "'";
+			echo $query;	 
+			return false;
+		}
+		else if (mysql_num_rows($result) == 0)
+		{
+			return $_POST ['error'] = "NoRecord";
+		}
+		$Show = mysql_fetch_array($result);
+		return $Show;
+	}
+
 	function addShow ($AirTime, $EndTime, $ShowName, $ShowDesc, $Sunday, $Monday, $Tuesday, $Wednesday, $Thursday, $Friday, $Saturday)
 	{
 	
@@ -113,8 +132,8 @@ require_once(__ROOT__.'/config.php');
 			return $_POST ['error'] = "NoRecords";
 		}
 		while ($row_ID = mysql_fetch_array($result))
-			$Books[] = $row_ID;
-		return $Books;
+			$Shows[] = $row_ID;
+		return $Shows;
 	}
 	/** End Generalized Display **/
 

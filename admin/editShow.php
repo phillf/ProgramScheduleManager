@@ -1,12 +1,10 @@
 <?php 
 
 	include "./IncludeMe.php";
-	$ID = $_GET['ID'];
-	$AirTime = $_GET['AirTime'];
-	$EndTime = $_GET['EndTime'];
-	$ShowName = $_GET['ShowName'];
-	$ShowDesc = $_GET['ShowDesc'];
-	$Sunday = $_GET['Sunday'];
+	$showDetails = $Schedule->getShow($_GET['$ID']);
+	print_r($showDetails);
+	echo $showDetails[ShowName];
+
 ?>
 	<form id="adminForm" name="addBook" action="../handlers/saveBook.php" method="POST">
 		<table width="100%" cellspacing="3">
@@ -34,13 +32,13 @@
 					<tr>
 						<td>What is the show's name?</td>
 						<td>
-							<input type="text" name="ShowName" value="Show Name" />
+							<input type="text" name="ShowName" value="<?php echo $showDetails["ShowName"]; ?>" />
 						</td>
 					</tr>
 					<tr>
 						<td>What is the description of the show?</td>
 						<td>
-							<input type="textarea" name="ShowDesc" value="Show Description" />
+							<input type="textarea" name="ShowDesc" value="<?php echo $showDetails["ShowDesc"]; ?>" />
 						</td>
 					</tr>
 					<tr>

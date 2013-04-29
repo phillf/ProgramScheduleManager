@@ -1,21 +1,40 @@
-<?php 
-
-	include "IncludeMe.php";
-	$ID = $_GET['ID'];
-	$AirTine = $_GET['AirTime'];
-	$EndTime = $_GET['EndTime'];
-	$ShowName = $_GET['ShowName'];
-	$ShowDesc = $_GET['ShowDesc'];
-	$Sunday = $_GET['Sunday'];
-	$Monday = $_GET['Monday'];
-	$Tuesday = $_GET['Tuesday'];
-	$Wednesday = $_GET['Wednesday'];
-	$Thursday = $_GET['Thursday'];
-	$Friday = $_GET['Friday'];
-	$Saturday = $_GET['Saturday'];
-?>
-	<form id="adminForm" name="editShow" action="../handlers/saveShow.php" method="POST">
-		<table width="100%" cellspacing="3">
+<? include "./IncludeMe.php"; ?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>PowerCast Radio - Program Schedule</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.fancybox.js?v=2.0.6"></script>
+<script src="../js/fancyFunction.js"></script>
+<script src="../js/picnet.table.filter.min.js"></script>
+<script src="http://www.sunsean.com/idTabs/jquery.idTabs.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var options = {
+		additionalFilterTriggers: [$('#quickfind')]
+	};
+	$('#stripe').tableFilter(options);
+});
+</script>
+<link href="http://fonts.googleapis.com/css?family=Capriola" rel="stylesheet" type="text/css" />
+<link href="../js/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="whiteHat"><!--<img class="logoPlacement" alt="IHCD Logo" src="images/ihcdSize.png" height="80" width="324">--><h1>PowerCast Radio - Program Schedule</h1><br />
+</div>
+<div id="usual1" class="usual">
+<div id="sb">
+	<div id="sbC">
+		<div class="ribWrap"><div class="ribFro"><div class="ribTex">
+			<?php include "../static/navigation.static.php" ?>
+		</div><div class="ribTri"></div></div>
+		</div>
+	</div>
+</div>
+<div id="container">
+		<form id="adminForm" name="addStaff" action="handlers/addShow.php" method="POST">
+			<table width="100%" cellspacing="3">
 				<tbody>
 					<tr>
 						<td>What time does this show start?</td>
@@ -85,9 +104,10 @@
 						<td>No<input checked="yes" type="radio" name="Saturday" value="0" /></td>
 					</tr>
 					<tr>
-						<td colspan="2"><input type="submit" value="Update Show" /><input type="reset" value="Clear Form" /></td>
+						<td colspan="2"><input type="submit" value="Add Show" /><input type="reset" value="Clear Form" /></td>
 					</tr>
 				</tbody>
-			</table>
-	</form>
-	<br />
+		</form>
+</div>
+</body>
+</html>
