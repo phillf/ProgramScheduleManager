@@ -1,7 +1,7 @@
 <?php 
 
 	include "./IncludeMe.php";
-	$showDetails = $Schedule->getShow($_GET['$ID']);
+	$showDetails = $Schedule->getShow($_GET['ID']);
 	print_r($showDetails);
 	echo $showDetails[ShowName];
 
@@ -20,7 +20,7 @@ tinymce.init({
 </script>
 </head>
 <body>
-	<form id="adminForm" name="addBook" action="../includes/saveBook.php" method="POST">
+	<form id="adminForm" name="addBook" action="../includes/saveShow.php" method="POST">
 		<table width="100%" cellspacing="3">
 				<tbody>
 					<tr>

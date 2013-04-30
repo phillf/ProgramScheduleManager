@@ -65,7 +65,7 @@ require_once(__ROOT__.'/config.php');
 	// This function will be used to populate the edit show form.
 	function getShow($ID)
 	{
-		$query = "SELECT * FROM PCR_Show_Schedule WHERE ID = 1";
+		$query = "SELECT * FROM PCR_Show_Schedule WHERE ID = $ID";
 		$result = mysql_query($query);
 		if($result == false) { 
 			echo "Query Failed for reason '" . mysql_error() . "'";
@@ -113,6 +113,7 @@ require_once(__ROOT__.'/config.php');
 		{
 			die('Query Failed: ' . mysql_error());
 		}
+		return HEADER('/admin/?error=1');
 	}
 	/** End Record Management **/
 
