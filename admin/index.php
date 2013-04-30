@@ -27,7 +27,7 @@ $(document).ready(function() {
 <div id="sb">
 	<div id="sbC">
 		<div class="ribWrap"><div class="ribFro"><div class="ribTex">
-			<?php include '../static/navigation.static.php'; ?>
+			<?php include '../includes/static/navigation.static.php'; ?>
 		</div><div class="ribTri"></div></div>
 		</div>
 	</div>

@@ -105,7 +105,7 @@ require_once(__ROOT__.'/config.php');
 		return HEADER ("LOCATION:" . $_SERVER['HTTP_REFERER'] . "/?error=2");
 	}
 
-	function saveShow ($ID, $AirTime, $EndTime, $ShowName, $ShowDesc,	 $Sunday, $Monday, $Tuesday, $Wednesday, $Thursday, $Friday, $Saturday)
+	function saveShow ($ID, $AirTime, $EndTime, $ShowName, $ShowDesc, $Sunday, $Monday, $Tuesday, $Wednesday, $Thursday, $Friday, $Saturday)
 	{
 		$query = "UPDATE PCR_Show_Schedule SET `AirTime` = '".$AirTime."', `EndTime` = '".$EndTime."', `ShowName` = '".$ShowName."' , `ShowDesc` = '".$ShowDesc."' , `Sunday` = '".$Sunday."' , `Monday` = '".$Monday."' , `Tuesday` = '".$Tuesday."' , `Wednesday` = '".$Wednesday."' , `Thursday` = '".$Thursday."' , `Friday` = '".$Friday."' , `Saturday` = '".$Saturday."' WHERE `ID` = '".(int)$ID."'";
 		$result = mysql_query($query);
@@ -113,7 +113,6 @@ require_once(__ROOT__.'/config.php');
 		{
 			die('Query Failed: ' . mysql_error());
 		}
-		HEADER ("LOCATION: /lightBox/close.php");
 	}
 	/** End Record Management **/
 

@@ -6,7 +6,21 @@
 	echo $showDetails[ShowName];
 
 ?>
-	<form id="adminForm" name="addBook" action="../handlers/saveBook.php" method="POST">
+
+<html>
+<head>
+	<title>Edit Show | <?php echo $showDetails['ShowName']; ?></title>
+	<script type="text/javascript" src="../includes/js/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+    width: "1000",
+    height: "150",
+ });
+</script>
+</head>
+<body>
+	<form id="adminForm" name="addBook" action="../includes/saveBook.php" method="POST">
 		<table width="100%" cellspacing="3">
 				<tbody>
 					<tr>
@@ -37,8 +51,9 @@
 					</tr>
 					<tr>
 						<td>What is the description of the show?</td>
-						<td>
-							<input type="textarea" name="ShowDesc" value="<?php echo $showDetails["ShowDesc"]; ?>" />
+						<td colspan="2">
+							<textarea name="ShowDesc"><?php echo $showDetails['ShowDesc'];?></textarea>
+							<!-- <input type="textarea" name="ShowDesc" value="<?php //echo $showDetails["ShowDesc"]; ?>" />-->
 						</td>
 					</tr>
 					<tr>
@@ -77,8 +92,9 @@
 						<td>No<input checked="yes" type="radio" name="Saturday" value="0" /></td>
 					</tr>
 					<tr>
-						<td colspan="2"><input type="submit" value="Add Show" /><input type="reset" value="Clear Form" /></td>
+						<td colspan="2"><input type="submit" value="Save Show" /><input type="reset" value="Clear Form" /></td>
 					</tr>
 				</tbody>
 	</form>
-	<br />
+</body>
+</html>
