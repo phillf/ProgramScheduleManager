@@ -12,5 +12,5 @@
 	$Thursday = mysql_escape_string($_POST['Thursday']);
 	$Friday = mysql_escape_string($_POST['Friday']);
 	$Saturday = mysql_escape_string($_POST['Saturday']);
-	$Shows->saveShow($AirTime, $EndTime, $ShowName, $ShowDesc, $Sunday, $Monday, $Tuesday, $Wednesday, $Thursday, $Friday, $Saturday);
+	$Shows->saveShow($ID, $AirTime, $EndTime, $ShowName, $ShowDesc, $Sunday, $Monday, $Tuesday, $Wednesday, $Thursday, $Friday, $Saturday);
 ?>
