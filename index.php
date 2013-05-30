@@ -29,6 +29,7 @@
    		else { ?>
    			<tr>
    				<td colspan="4">No Show Data Available on this day.</td>
+                        </tr>
    		<? } ?>
 		</tbody>
 	</table>

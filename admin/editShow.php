@@ -59,17 +59,17 @@ tinymce.init({
 							<textarea name="ShowDesc"><?php echo $showDetails['ShowDesc'];?></textarea>
 						</td>
 					</tr>
-                                        <?php $days = array(Sunday, Monday, Tuesday, Wednesday, Thursday, Firday, Saturday); 
+                                        <?php $days = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"); 
                                         
                                         foreach ($days as $day) { ?>
                                         <tr>
 						<td>Does this show air on <?php echo $day; ?>?</td>
                                                 <?php if ($showDetails[$day] = 1) { ?>
-						<td>Yes<input type="radio" name="Monday" value="1" checked="yes" /></td>
-						<td>No<input type="radio" name="Monday" value="0" /></td>
-                                                <?php } else if ($showDetails[$day] = 0) { ?>
-                                                <td>Yes<input type="radio" name="Monday" value="1" /></td>
-						<td>No<input type="radio" name="Monday" value="0" checked="yes" /></td>
+						<td>Yes<input type="radio" name="<?=$day;?>" value="1" checked="yes" /></td>
+						<td>No<input type="radio" name="<?=$day;?>" value="0" /></td>
+                                                <?php } else if ($showDetails[$day] = 1) { ?>
+                                                <td>Yes<input type="radio" name="<?=$day;?>" value="1" /></td>
+						<td>No<input type="radio" name="<?=$day;?>" value="0" checked="yes" /></td>
                                                 <?php }; ?>
 					</tr>
                                         <? }; ?>
