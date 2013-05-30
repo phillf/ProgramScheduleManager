@@ -4,9 +4,7 @@
 <head>
 <title>PowerCast Radio - Program Schedule</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery.fancybox.js?v=2.0.6"></script>
-<script src="../js/fancyFunction.js"></script>
-<script src="../js/picnet.table.filter.min.js"></script>
+<script type="text/javascript" src="../includes/js/tinymce/tinymce.min.js"></script>
 <script src="http://www.sunsean.com/idTabs/jquery.idTabs.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -15,6 +13,15 @@ $(document).ready(function() {
 	};
 	$('#stripe').tableFilter(options);
 });
+
+tinymce.init({
+    selector: "textarea",
+    width: "1000",
+    height: "150",
+    menubar : false,
+    statusbar : false,
+    plugins: "code",
+ });
 </script>
 <link href="http://fonts.googleapis.com/css?family=Capriola" rel="stylesheet" type="text/css" />
 <link href="../js/jquery.fancybox.css" rel="stylesheet" type="text/css" />
@@ -27,22 +34,22 @@ $(document).ready(function() {
 <div id="sb">
 	<div id="sbC">
 		<div class="ribWrap"><div class="ribFro"><div class="ribTex">
-			<?php include "../static/navigation.static.php" ?>
+			<?php include "../includes/static/navigation.static.php" ?>
 		</div><div class="ribTri"></div></div>
 		</div>
 	</div>
 </div>
 <div id="container">
-		<form id="adminForm" name="addStaff" action="handlers/addShow.php" method="POST">
+		<form id="adminForm" name="addStaff" action="../includes/addShow.php" method="POST">
 			<table width="100%" cellspacing="3">
 				<tbody>
 					<tr>
 						<td>What time does this show start?</td>
 						<td>
 							<select name="AirTime">
-							<?php for($i = 0; $i < 24; $i++): ?>
-	  							<option value="<?= $i; ?>"><?= $i % 12 ? $i % 12 : 12 ?>:00 <?= $i >= 12 ? 'pm' : 'am' ?></option>
-							<?php endfor ?>
+    						<?php for($i = 0; $i < 24; $i++): ?>
+         						<option value="<?= $i; ?>:00:00" <?php if ($i == $showDetails['AirTime']) { echo 'selected'; } ?> ><?= $i % 12 ? $i % 12 : 12 ?>:00 <?= $i >= 12 ? 'pm' : 'am' ?></option>
+    						<?php endfor ?>
 							</select>
 						</td>
 					<tr>
@@ -50,9 +57,9 @@ $(document).ready(function() {
 						<td>What time does the show end?</td>
 						<td>
 							<select name="EndTime">
-							<?php for($i = 0; $i < 24; $i++): ?>
-	  							<option value="<?= $i; ?>"><?= $i % 12 ? $i % 12 : 12 ?>:00 <?= $i >= 12 ? 'pm' : 'am' ?></option>
-							<?php endfor ?>
+    						<?php for($i = 0; $i < 24; $i++): ?>
+         						<option value="<?= $i; ?>:00:00" <?php if ($i == $showDetails['EndTime']) { echo 'selected'; } ?> ><?= $i % 12 ? $i % 12 : 12 ?>:00 <?= $i >= 12 ? 'pm' : 'am' ?></option>
+    						<?php endfor ?>
 							</select>
 						</td>
 					</tr>
@@ -64,8 +71,8 @@ $(document).ready(function() {
 					</tr>
 					<tr>
 						<td>What is the description of the show?</td>
-						<td>
-							<input type="textarea" name="ShowDesc" value="Show Description" />
+						<td colspan="2">
+							<textarea name="ShowDesc">Sorry, no sohw description available. Please check back later.</textarea>
 						</td>
 					</tr>
 					<tr>

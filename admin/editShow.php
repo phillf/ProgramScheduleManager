@@ -2,8 +2,8 @@
 
 	include "./IncludeMe.php";
 	$showDetails = $Schedule->getShow($_GET['ID']);
-	print_r($showDetails);
-	echo $showDetails[ShowName];
+	/** print_r($showDetails);
+	echo $showDetails[ShowName]; **/
 
 ?>
 
@@ -16,20 +16,24 @@ tinymce.init({
     selector: "textarea",
     width: "1000",
     height: "150",
+    menubar : false,
+    statusbar : false,
+    plugins: "code",
  });
 </script>
 </head>
 <body>
-	<form id="adminForm" name="addBook" action="../includes/saveShow.php" method="POST">
+
+	<form id="adminForm" name="editShow" action="../includes/saveShow.php" method="POST">
 		<table width="100%" cellspacing="3">
 				<tbody>
 					<tr>
 						<td>What time does this show start?</td>
 						<td>
 							<select name="AirTime">
-							<?php for($i = 0; $i < 24; $i++): ?>
-	  							<option value="<?= $i; ?>"><?= $i % 12 ? $i % 12 : 12 ?>:00 <?= $i >= 12 ? 'pm' : 'am' ?></option>
-							<?php endfor ?>
+    						<?php for($i = 0; $i < 24; $i++): ?>
+         						<option value="<?= $i; ?>:00:00" <?php if ($i == $showDetails['AirTime']) { echo 'selected'; } ?> ><?= $i % 12 ? $i % 12 : 12 ?>:00 <?= $i >= 12 ? 'pm' : 'am' ?></option>
+    						<?php endfor ?>
 							</select>
 						</td>
 					<tr>
@@ -37,9 +41,9 @@ tinymce.init({
 						<td>What time does the show end?</td>
 						<td>
 							<select name="EndTime">
-							<?php for($i = 0; $i < 24; $i++): ?>
-	  							<option value="<?= $i; ?>"><?= $i % 12 ? $i % 12 : 12 ?>:00 <?= $i >= 12 ? 'pm' : 'am' ?></option>
-							<?php endfor ?>
+    						<?php for($i = 0; $i < 24; $i++): ?>
+         						<option value="<?= $i; ?>:00:00" <?php if ($i == $showDetails['EndTime']) { echo 'selected'; } ?> ><?= $i % 12 ? $i % 12 : 12 ?>:00 <?= $i >= 12 ? 'pm' : 'am' ?></option>
+    						<?php endfor ?>
 							</select>
 						</td>
 					</tr>
@@ -95,6 +99,7 @@ tinymce.init({
 						<td colspan="2"><input type="submit" value="Save Show" /><input type="reset" value="Clear Form" /></td>
 					</tr>
 				</tbody>
+				<input type="text" name="ID" value="<?php echo $showDetails["ID"]; ?>" hidden />
 	</form>
 </body>
 </html>

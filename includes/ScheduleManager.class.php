@@ -87,10 +87,10 @@ require_once(__ROOT__.'/config.php');
 		$result = mysql_query($query);
 		if (!$result)
 		{
-			return HEADER ("LOCATION: /?error=1");
+			return HEADER ("LOCATION: /admin/?error=1");
 			
 		}
-		return HEADER ("LOCATION: /?error=2");
+		return HEADER ("LOCATION: /admin/?error=2");
 	}
 	
 	function removeShow ($ID)
@@ -107,13 +107,14 @@ require_once(__ROOT__.'/config.php');
 
 	function saveShow ($ID, $AirTime, $EndTime, $ShowName, $ShowDesc, $Sunday, $Monday, $Tuesday, $Wednesday, $Thursday, $Friday, $Saturday)
 	{
-		$query = "UPDATE PCR_Show_Schedule SET `AirTime` = '".$AirTime."', `EndTime` = '".$EndTime."', `ShowName` = '".$ShowName."' , `ShowDesc` = '".$ShowDesc."' , `Sunday` = '".$Sunday."' , `Monday` = '".$Monday."' , `Tuesday` = '".$Tuesday."' , `Wednesday` = '".$Wednesday."' , `Thursday` = '".$Thursday."' , `Friday` = '".$Friday."' , `Saturday` = '".$Saturday."' WHERE `ID` = '".(int)$ID."'";
+		$query = "UPDATE PCR_Show_Schedule SET  `AirTime` = '".$AirTime."', `EndTime` = '".$EndTime."', `ShowName` = '".$ShowName."' , `ShowDesc` = '".$ShowDesc."' , `Sunday` = '".$Sunday."' , `Monday` = '".$Monday."' , `Tuesday` = '".$Tuesday."' , `Wednesday` = '".$Wednesday."' , `Thursday` = '".$Thursday."' , `Friday` = '".$Friday."' , `Saturday` = '".$Saturday."' WHERE `ID` = '". $ID."'";
+		//echo "UPDATE PCR_Show_Schedule SET  `AirTime` = '".$AirTime."', `EndTime` = '".$EndTime."', `ShowName` = '".$ShowName."' , `ShowDesc` = '".$ShowDesc."' , `Sunday` = '".$Sunday."' , `Monday` = '".$Monday."' , `Tuesday` = '".$Tuesday."' , `Wednesday` = '".$Wednesday."' , `Thursday` = '".$Thursday."' , `Friday` = '".$Friday."' , `Saturday` = '".$Saturday."' WHERE `ID` = '".$ID."'";
 		$result = mysql_query($query);
 		if (!$result)
 		{
 			die('Query Failed: ' . mysql_error());
 		}
-		return HEADER('/admin/?error=1');
+		return HEADER("LOCATION: /admin/?error=1");
 	}
 	/** End Record Management **/
 

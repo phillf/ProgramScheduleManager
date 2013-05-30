@@ -1,5 +1,5 @@
 <?php
-	include "./ScheduleClass.php";
+	include "./ScheduleManager.class.php";
 	$Shows = new ScheduleClass ();
 	$AirTime = mysql_escape_string($_POST['AirTime']); 
 	$EndTime = mysql_escape_string($_POST['EndTime']);

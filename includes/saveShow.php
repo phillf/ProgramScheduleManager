@@ -1,10 +1,11 @@
 <?php
 	include "./ScheduleManager.class.php";
 	$Shows = new ScheduleClass ();
-	$AirTime = mysql_escape_string($_POST['AirTime']); 
+	$ID = mysql_escape_string($_POST['ID']);
+	$AirTime = $_POST['AirTime']; 
 	$EndTime = mysql_escape_string($_POST['EndTime']);
-	$ShowName = mysql_escape_string($_POST['ShowName']);
-	$ShowDesc = mysql_escape_string($_POST['ShowDesc']);
+	$ShowName = $_POST['ShowName'];
+	$ShowDesc = $_POST['ShowDesc'];
 	$Sunday = mysql_escape_string($_POST['Sunday']);
 	$Monday = mysql_escape_string($_POST['Monday']);
 	$Tuesday = mysql_escape_string($_POST['Tuesday']);

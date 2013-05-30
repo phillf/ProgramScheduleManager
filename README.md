@@ -3,7 +3,7 @@ ProgramScheduleManager
 
 ## Introduction
 
-The Program Schedule Manager was originally developed for PowerCast Radio. This application will allow you to add, edit, and delete a program shcedule without needing to know, or bother with editing, HTML.
+The Station Manager app was originally developed for PowerCast Radio. This application will allow you to add, edit, and delete a program shcedule without needing to know, or bother with editing, HTML.
 
 ## Installation
 
