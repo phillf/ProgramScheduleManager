@@ -23,11 +23,11 @@
 				header( 'Location: index.php' );
 			}
 		}
-		$error = "Incorrect username and/or password";
-	}
-	if($_POST['adminlogin_username']==""||$_POST['adminlogin_password']==""){
-		$error = "Username AND password are required";
-	}
+	return header ("LOCATION: login.php?error=1");
+        /*if($_GET['adminlogin_username']==""||$_GET['adminlogin_password']==""){
+		return header ("LOCATION: login.php?error=2");
+	}*/
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,8 @@
 		<title>Log In - PowerCast Radio - Program Schedule</title>
 	</head>
 	<body>
-		<?=isset($error) ? "<h4>".$error."</h4>" : ""?>
+                <? if ( $_GET["error"] == 1 ) { echo "Incorrect username or password."; }
+                else if ( $_GET["error"]== 2 ) { echo "username AND password are required."; } ?>
 		<form action="" method="POST">
 			Username: <input type="text" name="adminlogin_username" />
 			Password: <input type="password" name="adminlogin_password" />
