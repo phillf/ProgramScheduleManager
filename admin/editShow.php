@@ -2,8 +2,8 @@
 
 	include "./IncludeMe.php";
 	$showDetails = $Schedule->getShow($_GET['ID']);
-	/** print_r($showDetails);
-	echo $showDetails[ShowName]; **/
+	print_r($showDetails);
+	//echo $showDetails[ShowName]; **/
 
 ?>
 
@@ -57,14 +57,22 @@ tinymce.init({
 						<td>What is the description of the show?</td>
 						<td colspan="2">
 							<textarea name="ShowDesc"><?php echo $showDetails['ShowDesc'];?></textarea>
-							<!-- <input type="textarea" name="ShowDesc" value="<?php //echo $showDetails["ShowDesc"]; ?>" />-->
 						</td>
 					</tr>
-					<tr>
-						<td>Does this show air on Sunday?</td>
-						<td>Yes<input type="radio" name="Sunday" value="1" /></td>
-						<td>No<input checked="yes" type="radio" name="Sunday" value="0" /></td>
+                                        <?php $days = array(Sunday, Monday, Tuesday, Wednesday, Thursday, Firday, Saturday); 
+                                        
+                                        foreach ($days as $day) { ?>
+                                        <tr>
+						<td>Does this show air on <?php echo $day; ?>?</td>
+                                                <?php if ($showDetails[$day] = 1) { ?>
+						<td>Yes<input type="radio" name="Monday" value="1" checked="yes" /></td>
+						<td>No<input type="radio" name="Monday" value="0" /></td>
+                                                <?php } else if ($showDetails[$day] = 0) { ?>
+                                                <td>Yes<input type="radio" name="Monday" value="1" /></td>
+						<td>No<input type="radio" name="Monday" value="0" checked="yes" /></td>
+                                                <?php }; ?>
 					</tr>
+                                        <? }; ?>
 					<tr>
 						<td>Does this show air on Monday?</td>
 						<td>Yes<input type="radio" name="Monday" value="1" /></td>
