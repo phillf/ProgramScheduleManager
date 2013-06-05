@@ -2,7 +2,7 @@
 
 	include "./IncludeMe.php";
 	$showDetails = $Schedule->getShow($_GET['ID']);
-	print_r($showDetails);
+	//print_r($showDetails);
 	//echo $showDetails[ShowName]; **/
 
 ?>
@@ -64,45 +64,15 @@ tinymce.init({
                                         foreach ($days as $day) { ?>
                                         <tr>
 						<td>Does this show air on <?php echo $day; ?>?</td>
-                                                <?php if ($showDetails[$day] = 1) { ?>
+                                                <?php if ($showDetails[$day] == 1) { ?>
 						<td>Yes<input type="radio" name="<?=$day;?>" value="1" checked="yes" /></td>
 						<td>No<input type="radio" name="<?=$day;?>" value="0" /></td>
-                                                <?php } else if ($showDetails[$day] = 1) { ?>
+                                                <?php } else { ?>
                                                 <td>Yes<input type="radio" name="<?=$day;?>" value="1" /></td>
 						<td>No<input type="radio" name="<?=$day;?>" value="0" checked="yes" /></td>
                                                 <?php }; ?>
 					</tr>
                                         <? }; ?>
-					<tr>
-						<td>Does this show air on Monday?</td>
-						<td>Yes<input type="radio" name="Monday" value="1" /></td>
-						<td>No<input checked="yes" type="radio" name="Monday" value="0" /></td>
-					</tr>
-					<tr>
-						<td>Does this show air on Tuesday?</td>
-						<td>Yes<input type="radio" name="Tuesday" value="1" /></td>
-						<td>No<input checked="yes" type="radio" name="Tuesday" value="0" /></td>
-					</tr>
-					<tr>
-						<td>Does this show air on Wednesday?</td>
-						<td>Yes<input type="radio" name="Wednesday" value="1" /></td>
-						<td>No<input checked="yes" type="radio" name="Wednesday" value="0" /></td>
-					</tr>
-					<tr>
-						<td>Does this show air on Thursday?</td>
-						<td>Yes<input type="radio" name="Thursday" value="1" /></td>
-						<td>No<input checked="yes" type="radio" name="Thursday" value="0" /></td>
-					</tr>
-					<tr>
-						<td>Does this show air on Friday?</td>
-						<td>Yes<input type="radio" name="Friday" value="1" /></td>
-						<td>No<input checked="yes" type="radio" name="Friday" value="0" /></td>
-					</tr>
-					<tr>
-						<td>Does this show air on Saturday?</td>
-						<td>Yes<input type="radio" name="Saturday" value="1" /></td>
-						<td>No<input checked="yes" type="radio" name="Saturday" value="0" /></td>
-					</tr>
 					<tr>
 						<td colspan="2"><input type="submit" value="Save Show" /><input type="reset" value="Clear Form" /></td>
 					</tr>
